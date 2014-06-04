@@ -1,5 +1,5 @@
-<h2>https://addup.firebaseapp.com/</h2>
-<h2>数据库开放https://addup.firebaseio.com/</h2>
+<h2>产品使用网址 https://addup.firebaseapp.com/</h2>
+<h2>数据库开放 https://addup.firebaseio.com/</h2>
 <H2>调查统计产品战略</H2>
 
 <dl>
@@ -22,18 +22,18 @@
 <DD>例如，最后统计完了生成个条形图或饼状图 
 <DT>4、创建新的统计 
 <DD>例如，旧的统计保存以便将来查看乃至继续统计，也可以删除 ，新的统计递归似的拥有1、2和3的功能</DD></DL>
-<A href="http://segmentfault.com/e/segmentfault-2-years-hangzhou">
 <H2>也为了 黑客马拉松（杭州）</H2>
 <P>黑客马拉松是很多程序员相聚在一起，以合作的形式去进行编写程序。精髓在于：很多人，在一段特定的时间内，相聚在一起，以他们想要的方式，去做他们想做的事情 —— 整个编程的过程几乎没有任何限制或者方向。 
 <P>开始时间：2014年05月31日 09时00分 
 <P>结束时间：2014年06月01日 18时00分 
 <P>主办方：SegmentFault 
-<P>地点：杭州西湖区西溪路628号福地创业园A座5楼 福云咖啡</P></A>
+<P>地点：杭州西湖区西溪路628号福地创业园A座5楼 福云咖啡</P>
+<p>http://segmentfault.com/e/segmentfault-2-years-hangzhou
 
 <h2>团队成员</h2>
 <dl>
-	<dt>吴超龙<charon@guangjieba.com>
-	<dt>陈靓<charlene@guangjieba.com>
-	<dt>宋瞻<popeye@guangjieba.com>
-	<dt>朱明媚<jummy@guangjieba.com>
+	<dt>吴超龙<dd>charon@guangjieba.com
+	<dt>陈靓<dd>charlene@guangjieba.com
+	<dt>宋瞻<dd>popeye@guangjieba.com
+	<dt>朱明媚<dd>jummy@guangjieba.com
 </dl>

@@ -1,67 +1,63 @@
  angular.module('app', ['ngRoute','firebase'])
 .directive( "highcharts", function() {
     return function (scope, element, attr) {
-      element.highcharts({
-            chart: {
-                type: 'bar'
-            },
-            title: {
-                text: scope.addup.name,
-            },
-            subtitle: {
-                text: 'Source: addup'
-            },
-            xAxis: {
-                categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
-                title: {
-                    text: null
-                }
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Population (millions)',
-                    align: 'high'
-                },
-                labels: {
-                    overflow: 'justify'
-                }
-            },
-            tooltip: {
-                valueSuffix: ' millions'
-            },
-            plotOptions: {
-                bar: {
-                    dataLabels: {
-                        enabled: true
-                    }
-                }
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'right',
-                verticalAlign: 'top',
-                x: -40,
-                y: 100,
-                floating: true,
-                borderWidth: 1,
-                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'),
-                shadow: true
-            },
-            credits: {
-                enabled: false
-            },
-            series: [{
-                name: 'Year 1800',
-                data: [107, 31, 635, 203, 2]
-            }, {
-                name: 'Year 1900',
-                data: [133, 156, 947, 408, 6]
-            }, {
-                name: 'Year 2008',
-                data: [973, 914, 4054, 732, 34]
-            }]
-        });
+      function load(){
+        var addup = scope.addup;
+        var names = [];
+        var data = [];
+         for(var key in addup){
+            var name = addup[key].name;
+            if(!name){
+              continue;
+            }
+            if(name.length>20){
+              name = name.slice(0,19)+"…";
+            }
+            names.push(name);
+            var y = addup[key].count;
+            var o = {
+              name:name,
+              y:y?y:null
+            }
+            data.push(o);
+         }
+         var height = 400+names.length*10;
+         element.height(height>400?height:400);
+
+
+        element.highcharts({
+              chart: {
+                  type: 'bar'
+              },
+              title: {
+                  text: addup.name,
+              },
+              xAxis: {
+                  categories: names
+              },
+              tooltip: {
+                  formatter: function() {
+                      return '<b>'+ this.series.name +'</b><br/>'+
+                          this.x +': '+ this.y;
+                  }
+              },
+              legend: {
+                  layout: 'vertical',
+                  floating: true,
+                  backgroundColor: '#FFFFFF',
+                  align: 'right',
+                  verticalAlign: 'top',
+                  y: 60,
+                  x: -60
+              },
+              series: [{
+                  data: data
+              }]
+          });
+      }
+      scope.$watch("addup.name",function(){
+        load();
+      });
     }
 })
 .controller('Addup', ['$route','$document','$location','$scope', '$firebase',

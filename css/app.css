@@ -48,6 +48,7 @@ input,button{
   left: 0;
   z-index: 3;
   background-color: #3C78D8;
+  overflow: hidden;
 }
 
 .app-bar.open {
@@ -151,67 +152,6 @@ input,button{
   backface-visibility: hidden;
 }
 
-/*@media all and (min-width: 1200px) {
-  
-  body {
-    padding: 16px;
-  }
-  
-  .app-bar {
-    display: block;
-    
-    height: 130px;
-    
-    padding: 0 16px;
-    margin-bottom: 16px;
-    
-    box-sizing: border-box;
-    
-    background-color: transparent;
-  }
-  
-  .app-bar .logo {
-    float: left;
-    
-    margin: 0;
-    
-    font-size: 100px;  
-    line-height: 130px;
-  }
-  
-  .app-bar-actions {
-    float: right;
-    
-    margin: 35px 0;
-  }
-  
-  .app-bar:after {
-    content: ' ';
-    
-    display:block;
-    height: 0;
-    overflow: hidden;
-    
-    clear: both;
-  }
-  
-  .search {
-    display: block;
-    
-    padding-left: 16px;
-  }
-  
-  button.menu {
-    display: none;
-  }
-  
-  nav {
-    display: block;
-
-    margin-top: 130px;
-  }
-}*/
-
 .navdrawer-container {
   position: fixed;
   
@@ -282,36 +222,6 @@ input,button{
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-/*@media all and (min-width: 1200px) {
-  .navdrawer-container {
-    position: relative;
-    
-    width: 100%;
-    height: auto;
-    
-    margin-top: 130px;
-
-    -webkit-transform: none;
-    tranform: none;
-    
-    -webkit-transition: none;
-    transition: none;
-  }
-
-  .navdrawer-container ul {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-  }
-  
-  .navdrawer-container ul li {
-    border: none;
-  }
-}*/
 .hide {
    display: none;
 }
