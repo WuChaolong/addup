@@ -1,0 +1,70 @@
+<!doctype html>
+<html ng-app="app" ng-controller="Addup"><head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+  <meta http-equiv="cleartype" content="on">
+  <meta name="fragment" content="!" />
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+
+
+
+    <title>统计_{{addup.name}}</title>
+
+    
+<!-- IE Specific to remove tap highlight -->
+    <meta name="msapplication-tap-highlight" content="no">
+    
+  </head>
+
+  <body>
+    <header class="app-bar promote-layer" ng-class="{open:isOpen}">
+      <button class="menu" ng-click="changeIsOpen()"><img src="img/hamburger.png"></button>
+
+      <h1 class="logo" ng-bind="addup.name"></h1>
+      <!-- <button style="color:#fff;" class="hide" ng-class="{show:addups}" ng-click="changeShowChart()">{{!showChart?"图表":"回去"}}</button> -->
+    </header>
+    <nav class="navdrawer-container promote-layer" ng-class="{open:isOpen}">
+      <ul>
+        <li ng-repeat="(key, addup) in addups"><a ng-href="#{{key}}" title="{{addup.name}}">{{addup.name}}</a></li>
+        <li ng-init="addupForm.show=false" align="center">
+          <form ng-if="addupForm.show" ng-submit="addAddup(addupForm.name);addupForm.show=false;">
+            <p><input ng-model="addupForm.name" id="addupFormName" placeholder="还想统计些啥呢" >
+            <input type="submit" value="确定">
+          </form>
+          <p ng-if="!addupForm.show" ><input  type="button" value="+" ng-click="addupForm.show=true;">
+        </li>
+      </ul>
+    </nav>
+    
+    <section class="main-content" ng-if="!showChart">
+         <p class="hide " ng-class="{show:true}">
+          <button ng-repeat="(key,category) in addup" ng-if="category.name" title="点击会+1" ng-click="add1(key)" class="big-block">
+            <span class="category-name" ng-bind="category.name"></span>
+            <span class="category-count" ng-bind="category.count||0"></span>
+          </button>
+          </p>
+        <div id="categoryFormDiv" ng-init="categoryForm.show=false">
+          <form ng-if="categoryForm.show" ng-submit="addCategory(categoryForm.name);categoryForm.show=false;" class="hide" ng-class="{show:true}">
+          <p>
+            <input ng-model="categoryForm.name" id="categoryName" placeholder="又要有新的分类了" >
+            <input type="submit" value="创建">
+          </p>
+          </form>
+          <p><input ng-if="!categoryForm.show"  type="button" value="+" ng-click="categoryForm.show=true;  " id="showAddCategory" >
+        </div>
+    </section>
+    <section class="main-content" ng-if="showChart">
+      <div highcharts></div>
+    </section>
+<!-- <script src="js/jquery/jquery.js"></script> -->
+<script src="js/angular/angular.js"></script>
+<script src="js/firebase/firebase.js"></script>
+<script src="js/firebase/angularfire.min.js"></script>
+
+<script src="js/angularfire.min.js"></script>
+<script src="js/angular/angular-route.js"></script>
+<!-- <script src="js/jquery/highcharts.js"></script>  -->
+<script src="js/main.js"></script> 
+
+
+</body></html>
