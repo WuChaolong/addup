@@ -1,4 +1,8 @@
 {
   "firebase": "addup",
-  "public": "index.html"
+  "public": "index.html",
+  "ignore": [
+    "firebase.json",
+    ".*"
+  ]
 }
