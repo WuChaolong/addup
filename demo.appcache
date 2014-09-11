@@ -1,0 +1,19 @@
+CACHE MANIFEST
+# v1.0.4
+index.html
+css/app.css
+js/jquery/jquery-1.10.2.min.js
+js/angular/angular.min.js
+js/firebase/firebase.js
+js/firebase/angularfire.min.js
+js/angular/angular-route.js
+js/jquery/highcharts.js
+js/main.js
+img/hamburger.png
+img/5_05.jpg
+/js/jquery/jquery-1.10.2.min.map
+/js/angular/angular.min.js.map
+
+NETWORK:
+
+FALLBACK:

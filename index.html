@@ -1,13 +1,18 @@
 <!doctype html>
-<html ng-app="app" ng-controller="Addup"><head>
+<html ng-app="app" ng-controller="Addup" manifest="demo.appcache">
+<head>
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
   <meta http-equiv="cleartype" content="on">
   <meta name="fragment" content="!" />
+    <meta name="apple-mobile-web-app-title" content="统计">
+    <link rel="apple-touch-icon-precomposed" href="blah"/>
+    <link rel="apple-touch-startup-image" href="img/5_05.jpg" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 
-
-    <title>统计_{{addup.name}}</title>
+    <title ng-bind="addup.name?+'addup.name_统计':'统计'">统计</title>
 
     
 <!-- IE Specific to remove tap highlight -->
@@ -58,7 +63,7 @@
             <input type="submit" value="创建">
           </p>
           </form>
-          <p><input ng-if="!categoryForm.show"  type="button" value="+" ng-click="categoryForm.show=true;  " id="showAddCategory" >
+          <p><input ng-if="!categoryForm.show"  type="button" value="+" ng-click="categoryForm.show=true;" id="showAddCategory" >
         </div>
     </section>
     <section class="main-content" ng-if="showChart">
